@@ -34,12 +34,106 @@ The application follows a multi-container architecture:
 
 ---
 
-# ☁ AWS EC2 Setup (Commands Used)
+# ☁ AWS EC2 Setup
 
-## Connect to EC2
+## 1️⃣ Connect to EC2
 
 ```bash
 ssh -i your-key.pem ubuntu@<EC2_PUBLIC_IP>
+
+2️⃣ Install Docker
+sudo apt update -y
+sudo apt install docker.io -y
+docker --version
+sudo systemctl start docker
+sudo systemctl enable docker
+
+3️⃣ Install Docker Compose
+sudo apt install docker-compose -y
+Verify:
+docker compose version
+
+📦 Clone Repository
+git clone https://github.com/aniruddhamule/django-notes-app.git
+cd django-notes-app
+
+🐳 Build & Run Application
+docker compose up --build -d
+
+What This Command Does:
+
+Builds Django image
+Builds Nginx image
+Pulls MySQL image
+Creates Docker network
+Creates volumes
+Starts all containers
+
+🔍 Verify Containers
+docker ps
+
+Expected containers:
+nginx_cont
+django_cont
+db_cont
+
+📊 Check Container Logs
+Nginx Logs
+docker logs nginx_cont
+
+Django Logs
+docker logs django_cont
+
+MySQL Logs
+docker logs db_cont
+
+🌐 Access Application
+
+Open in browser:
+
+http://<EC2_PUBLIC_IP>
+🐳 Docker Networking Explanation
+
+Docker Compose automatically creates a bridge network.
+
+Containers communicate using service names defined in docker-compose.yml.
+
+Example:
+
+Django connects to MySQL using:
+
+DB_HOST=db_cont
+
+
+Nginx forwards traffic to:
+
+django_cont:8000
+
+
+MySQL is NOT publicly exposed.
+
+🗄 Database Persistence
+
+MySQL uses a Docker volume:
+
+mysql-data/
+
+
+This ensures database data is not lost when containers restart.
+
+🔁 Restart / Rebuild Application
+
+If code changes:
+
+docker compose down
+docker compose up --build -d
+
+🛑 Stop Application
+docker compose down
+
+📁 Project Structure
+<img width="1124" height="436" alt="Screenshot 2026-02-15 001738" src="https://github.com/user-attachments/assets/d4a0ba0c-6cf9-4c9a-bcac-af1d80240edd" />
+
 
 # 📸 Screenshots
 
@@ -67,7 +161,6 @@ ssh -i your-key.pem ubuntu@<EC2_PUBLIC_IP>
 
 ## 📂 Project Structure
 
-<img width="1124" height="436" alt="Screenshot 2026-02-15 001738" src="https://github.com/user-attachments/assets/d4a0ba0c-6cf9-4c9a-bcac-af1d80240edd" />
 
 
 
