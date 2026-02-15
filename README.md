@@ -36,9 +36,8 @@ The application follows a multi-container architecture:
 
 # ☁ AWS EC2 Setup
 
-## 1️⃣ Connect to EC2
-
 ```bash
+## 1️⃣ Connect to EC2
 ssh -i your-key.pem ubuntu@<EC2_PUBLIC_IP>
 
 2️⃣ Install Docker
@@ -158,8 +157,6 @@ docker compose down
 <img width="1132" height="364" alt="Screenshot 2026-02-15 001535" src="https://github.com/user-attachments/assets/ee2a62f7-5070-44b4-9b18-aed9eeecbb20" />
 
 ---
-
-## 📂 Project Structure
 
 
 
