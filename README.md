@@ -233,36 +233,12 @@ docker compose down
 
 ---
 
-## 🔧 Project Structure
-
-```
-django-notes-app/
-├── docker-compose.yml
-├── Dockerfile
-├── nginx/
-│   └── nginx.conf
-├── app/
-│   ├── manage.py
-│   └── ...
-├── mysql-data/
-└── README.md
-```
-
----
-
 ## 🚨 Troubleshooting
 
 ### Container not starting?
 ```bash
 docker logs <container_name>
 ```
-
-### Port already in use?
-```bash
-sudo lsof -i :80
-sudo kill -9 <PID>
-```
-
 ### Database connection issues?
 Check `docker-compose.yml` environment variables:
 - `DB_HOST`
@@ -273,41 +249,14 @@ Check `docker-compose.yml` environment variables:
 
 ---
 
-## 📚 Additional Resources
+## Credits & Acknowledgments
 
-- [Docker Documentation](https://docs.docker.com/)
-- [Django Documentation](https://docs.djangoproject.com/)
-- [AWS EC2 Guide](https://docs.aws.amazon.com/ec2/)
-- [Nginx Documentation](https://nginx.org/en/docs/)
+This project is based on the original work by **Shubham Londhe**  [@LondheShubham153]
 
----
+Original Repository: (https://github.com/LondheShubham153/django-notes-app.git)
 
-## 👨‍💻 Author
-
-**Aniruddha Mule**
-
-GitHub: [@aniruddhamule](https://github.com/aniruddhamule)
+I have used this project for learning and deployment purposes, with modifications for AWS EC2 deployment and Docker containerization.
 
 ---
 
-## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
-
-Feel free to check the [issues page](https://github.com/aniruddhamule/django-notes-app/issues).
-
----
-
-## ⭐ Show your support
-
-Give a ⭐️ if this project helped you!
-
----
-
-**Made with ❤️ by Aniruddha Mule**
