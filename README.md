@@ -15,5 +15,5 @@ It demonstrates:
 
 ---
 
-# 🏗 High-Level Architecture
+# 🏗 Architecture Diagram
 
