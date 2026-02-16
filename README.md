@@ -249,7 +249,7 @@ Check `docker-compose.yml` environment variables:
 
 ## Credits & Acknowledgments
 
-This project is based on the original work by **Shubham Londhe** 
+This project is based on the original work by **Shubham Londhe**.
 
 Original Repository: (https://github.com/LondheShubham153/django-notes-app.git)
 
